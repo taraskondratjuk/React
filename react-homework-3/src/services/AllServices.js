@@ -1,7 +1,6 @@
 export class AllServices {
     url = "https://jsonplaceholder.typicode.com"
 
-
     getUsers() {
         return fetch(`${this.url}/users`)
             .then(users => users.json())
@@ -10,7 +9,6 @@ export class AllServices {
             })
     }
 
-
     getPosts() {
         return fetch(`${this.url}/posts`)
             .then(posts => posts.json())
@@ -18,6 +16,4 @@ export class AllServices {
                 return posts
             })
     }
-
-
 }
