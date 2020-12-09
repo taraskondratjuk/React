@@ -1,0 +1,15 @@
+.route{
+  border: 2px solid crimson;
+  box-sizing:border-box ;
+  background: #e2eaec;
+  display: block;
+}
+
+.links{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  font-family: cursive;
+  font-size: 30px;
+}
+
