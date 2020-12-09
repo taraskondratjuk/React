@@ -26,7 +26,6 @@ class App extends Component {
             }
         })
 
-
         this.setState({userPosts: allPosts})
     }
 
@@ -36,9 +35,10 @@ class App extends Component {
 
         return (
             <div>
-                {users.map((user, index) => <AllUsers user={user} key={index} choseUser={this.choseUser}/>)}
+                <AllUsers users={users} key={users.id} choseUser={this.choseUser}/>
 
-                {userPosts && <div>{userPosts.map(value => <li style={{background: "silver"}}>user : {value.userId} - {value.title}</li>)}</div>}
+                {userPosts && <div>{userPosts.map(value => <li style={{background: "silver"}}>user
+                    : {value.userId} - {value.title}</li>)}</div>}
             </div>
         );
     }

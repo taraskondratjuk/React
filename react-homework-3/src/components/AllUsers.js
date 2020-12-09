@@ -4,10 +4,10 @@ import User from "./User";
 class AllUsers extends Component {
     render() {
 
-        let {user,choseUser} = this.props
+        let {users, choseUser} = this.props
         return (
             <div>
-                <User user={user} choseUser={choseUser}/>
+                {users.map((user, index) => <User user={user} key={index} choseUser={choseUser}/>)}
             </div>
         );
     }
