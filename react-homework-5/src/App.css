@@ -1,0 +1,25 @@
+.link{
+  display: flex;
+  justify-content:space-around ;
+  background: lightblue;
+  font-family: cursive;
+  font-size: 40px;
+  margin-bottom: 2px;
+}
+
+.route{
+  background: lightslategray;
+  border: 2px solid rebeccapurple;
+  font-family: cursive;
+  font-size: 20px;
+
+}
+
+button{
+  height: 20px;
+  width: 60px;
+  background: #ef2861;
+  font-family: Cambria;
+  font-size: 15px;
+ font-palette: dark;
+}
