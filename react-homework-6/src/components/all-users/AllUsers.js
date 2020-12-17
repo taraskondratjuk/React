@@ -3,6 +3,7 @@ import AllServices from "../../services/AllServices";
 import User from "./User";
 import {Route, Switch, withRouter} from "react-router-dom";
 import FullUser from "./FullUser";
+import style from "./User.module.css"
 
 
 class AllUsers extends Component {
@@ -22,7 +23,7 @@ class AllUsers extends Component {
 
 
         return (
-            <div>
+            <div className={style.item}>
                 {
                     users.map(users => <User user={users} key={users.id}/>)
                 }

@@ -1,17 +1,9 @@
 import React, {Component} from 'react';
 import AllServices from "../../services/AllServices";
 import Post from "./Post";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useRouteMatch,
-    useParams,
-    withRouter
-} from "react-router-dom";
-import FullUser from "../all-users/FullUser";
+import {Route, Switch, withRouter} from "react-router-dom";
 import FullPost from "./FullPost";
+import style from "./Posts.module.css"
 
 
 class AllPosts extends Component {
@@ -32,7 +24,7 @@ class AllPosts extends Component {
 
 
         return (
-            <div>
+            <div className={style.item}>
                 {
                     posts.map(post => <Post post={post} key={post.id}/>)
                 }
