@@ -1,0 +1,28 @@
+.header {
+    height: 150px;
+    width: auto;
+    background: crimson;
+    color: white;
+}
+
+.title {
+    font-family: cursive;
+    font-size: 80px;
+    text-align: center;
+}
+
+.option {
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+}
+
+.cart{
+    margin-left: 35px;
+}
+
+.wish{
+    margin-left: 1650px;
+}
+
+
