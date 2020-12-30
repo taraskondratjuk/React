@@ -1,9 +1,8 @@
-import React from "react"
+import React,{useEffect} from "react"
 import {useSelector, useDispatch} from "react-redux";
-import {useEffect} from "react"
 import ProductItem from "../productItem/ProductItem";
-import p from "./productList.module.css"
-
+import style from "./productList.module.css"
+import {ADD_PRODUCTS} from "../../Redux/action-types/products-types";
 
 export default function ProductList() {
 
@@ -13,18 +12,18 @@ export default function ProductList() {
     const fetchProducts = async () => {
         const response = await fetch("https://fakestoreapi.com/products")
         const data = await response.json()
-        dispatch({type: "SET_PRODUCTS", payload: data})
+        dispatch({type: ADD_PRODUCTS, payload: data})
 
     }
 
     useEffect(() => {
-        fetchProducts()
+        fetchProducts().then()
     }, [])
 
 
     return (
 
-          <div className={p.main}>
+          <div className={style.main}>
               {
                   products.map(product => <ProductItem product={product} key={product.id}/>)
               }

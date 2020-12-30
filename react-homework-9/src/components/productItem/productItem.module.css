@@ -18,10 +18,11 @@
 
 }
 
-.price{
+.isListTrue{
+background: green;
+}
+
+.isListFalse{
 
 }
 
-.description{
-
-}

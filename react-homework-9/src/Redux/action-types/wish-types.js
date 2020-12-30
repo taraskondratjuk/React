@@ -1,0 +1,1 @@
+export const ADD_WISH_ITEM = "ADD_WISH_ITEM"

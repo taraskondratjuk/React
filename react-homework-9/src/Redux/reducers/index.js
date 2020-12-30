@@ -4,12 +4,9 @@ import {wishReducer} from "./wish-reducer";
 import {cartReducer} from "./cart-reducer";
 
 
-
-
-
 export const reducer = combineReducers({
     products: productsReducer,
-    wish: wishReducer,
+    wishlist: wishReducer,
     cart: cartReducer
 })
 

@@ -1,17 +1,35 @@
 import style from "./header.module.css"
+import {useEffect,useState} from 'react'
 import {useSelector} from "react-redux";
 
 
 export default function Header() {
-    const {products, wish, cart,wishCount,cartCount} = useSelector(({products: {products}, wish: {wish,wishCount}, cart: {cart,cartCount}}) => ({
+    const {wishlist, cart,} = useSelector(({products: {products}, wishlist: {wishlist}, cart: {cart}}) => ({
         products,
-        wish,
-        cart,
-        cartCount,
-        wishCount
+        wishlist,
+        cart
     }));
 
-console.log(cart)
+    const [allCostWishList,setAllCostWishList]=useState(0)
+    const [allCostCartList,setAllCostCartList]=useState(0)
+
+    useEffect(() => {
+       const costWishList = wishlist.reduce((acc, value) => {
+                acc += value.price
+                return acc
+            }, 0)
+
+        setAllCostWishList(costWishList)
+
+        const costCartList = cart.reduce((acc, value) => {
+            acc += value.price
+            return acc
+        }, 0)
+
+        setAllCostCartList(costCartList)
+
+    }, [cart, wishlist])
+
 
     return (
         <header className={style.header}>
@@ -21,8 +39,8 @@ console.log(cart)
             </div>
 
             <div className={style.option}>
-                <div className={style.wish}> wish: {wish.length}</div>
-                <div className={style.cart}> cart: {cart.length}</div>
+                <div title={allCostWishList} className={style.wish}> wish: {wishlist.length}</div>
+                <div title={allCostCartList} className={style.cart}> cart: {cart.length}</div>
             </div>
         </header>
     )

@@ -1,46 +1,52 @@
 import React from "react";
 import style from "./productItem.module.css"
-import {useSelector, useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {ADD_WISH_ITEM} from "../../Redux/action-types/wish-types";
+import {ADD_TO_CART} from "../../Redux/action-types/cart-types";
+
 
 export default function ProductItem(props) {
     const dispatch = useDispatch()
     const {id, title, price, description, image} = props.product
-    const {products, wish, cart} = useSelector(({products: {products}, wish: {wish}, cart: {cart}}) => ({
+    const {products, wishlist, cart} = useSelector(({products: {products}, wishlist: {wishlist}, cart: {cart}}) => ({
         products,
-        wish,
+        wishlist,
         cart
     }));
 
 
-    const addWishToList = () => {
+    const addWish = () => {
         const findProduct = products.find(product => product.id === id)
-        dispatch({type: "ADD_WISH_ITEM", payload: findProduct})
+        dispatch({type: ADD_WISH_ITEM, payload: findProduct})
 
     }
 
     const addToCart = () => {
         const findProduct = products.find(product => product.id === id)
-
-
-        if (cart.id===findProduct.id){
-            dispatch({type: "REMOVE_TO_CART", payload: findProduct})
-        }else{
-            dispatch({type: "ADD_TO_CART", payload: findProduct})
-        }
-
-
-
+        dispatch({type: ADD_TO_CART, payload: findProduct})
     }
+
+
+    const showWishList = wishlist.find(el => el.id === id)
+    const buttonWish = showWishList ? "remove from wish list" : "add to wish list"
+    const buttonWishColor = showWishList ? "red" : "green"
+
+
+    const showCartList = cart.find(el => el.id === id)
+    const buttonCart = showCartList ? "remove from cart" : "add to cart"
+    const buttonCartColor = showCartList ? "red" : "green"
+
 
     return (
         <div className={style.block}>
             <img className={style.img} src={image} alt="img"/>
             <h2 className={style.title}>{title}</h2>
             <h3 className={style.price}>Price : {price} </h3>
-            <div className={style.description}>{description}</div>
 
-            <button onClick={addWishToList}>add wish list</button>
-            <button onClick={addToCart}>add to cart</button>
+            <div >{description}</div>
+
+            <button style={{background:buttonWishColor}} onClick={addWish}>{buttonWish}</button>
+            <button style={{background:buttonCartColor}} onClick={addToCart}>{buttonCart}</button>
         </div>
     )
 }
