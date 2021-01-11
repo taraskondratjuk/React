@@ -1,0 +1,46 @@
+
+.navBar {
+    margin-left: 8%;
+    width: 20%;
+    height: auto;
+    border-right: 1px solid #bdbbbb;
+    border-bottom: 1px solid #bdbbbb;
+    text-decoration: none;
+}
+
+.a {
+    color: #3e77aa;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.navUl {
+    list-style-type: none;
+    width: auto;
+}
+
+.navImg {
+    height: 20px;
+}
+
+.dF {
+    display: flex;
+}
+
+.mgL3 {
+    margin-left: 3%;
+}
+
+
+.mgTop10 {
+    margin-top: 10px;
+}
+
+.sparrowImg {
+    height: 15px;
+}
+
+
+.w100 {
+    width: 100%;
+}

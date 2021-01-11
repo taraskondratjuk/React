@@ -1,0 +1,1 @@
+export const ADD_TO_LIKE_STATE="ADD_TO_LIKE_STATE"
