@@ -16,8 +16,6 @@ import {CLEAR_TO_CART_STATE} from "../../Redux/action-types/cart-types";
 
 export default function Header() {
 
-
-
     const dispatch = useDispatch()
 
     const {likeItem, cartItem} = useSelector(({likeItem: {likeItem}, cartItem: {cartItem}}) => ({
@@ -116,7 +114,7 @@ export default function Header() {
 
 
                 <div className={style.bottomHeader}>
-                    <img className={style.logoImg} src="https://xl-static.rozetka.com.ua/assets/img/design/logo_n.svg" alt="logo-rozetka"/>
+                    <img src="https://xl-static.rozetka.com.ua/assets/img/design/logo_n.svg" alt="logo-rozetka"/>
 
                     <button className={classNames(style.catalog, style.mgL5)}>
                        <span>

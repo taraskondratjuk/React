@@ -5,9 +5,3 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-
-@media (max-width: 1580px){
-    .productList{
-        width: auto;
-    }
-}
