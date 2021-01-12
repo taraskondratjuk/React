@@ -5,6 +5,7 @@
   font-family: cursive;
   font-size: 40px;
   margin-bottom: 2px;
+
 }
 
 .route{
@@ -12,6 +13,10 @@
   border: 2px solid rebeccapurple;
   font-family: cursive;
   font-size: 20px;
+  height: 870px;
+  color: midnightblue;
+  text-align: center;
+
 
 }
 

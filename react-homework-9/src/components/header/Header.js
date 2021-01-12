@@ -28,7 +28,7 @@ export default function Header() {
 
         setAllCostCartList(costCartList)
 
-    }, [cart, wishlist])
+    }, [wishlist,cart])
 
 
     return (

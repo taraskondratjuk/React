@@ -44,3 +44,9 @@
 .w100 {
     width: 100%;
 }
+
+@media (max-width: 1580px){
+    .navBar{
+        display: none;
+    }
+}
