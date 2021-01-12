@@ -43,3 +43,9 @@
     top: 180px;
     left: 1040px;
 }
+
+@media (max-width: 1170px) {
+    .carousel {
+        display: none;
+    }
+}

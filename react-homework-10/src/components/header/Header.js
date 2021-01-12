@@ -114,7 +114,7 @@ export default function Header() {
 
 
                 <div className={style.bottomHeader}>
-                    <img src="https://xl-static.rozetka.com.ua/assets/img/design/logo_n.svg" alt="logo-rozetka"/>
+                    <img className={style.logoImg} src="https://xl-static.rozetka.com.ua/assets/img/design/logo_n.svg" alt="logo-rozetka"/>
 
                     <button className={classNames(style.catalog, style.mgL5)}>
                        <span>

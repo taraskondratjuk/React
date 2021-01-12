@@ -213,6 +213,10 @@
     .rightContent {
         display: none;
     }
+
+    .header {
+        height: 70px;
+    }
 }
 
 @media (max-width: 870px) {
@@ -226,8 +230,11 @@
         display: none;
     }
 
-    .header {
-        height: 80px;
+}
+
+@media (max-width: 625px) {
+    .premiumProposition {
+        display: none;
     }
 }
 

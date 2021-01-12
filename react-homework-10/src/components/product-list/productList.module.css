@@ -5,3 +5,10 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+@media (max-width: 1600px) {
+    .productList {
+        margin-left: 50px;
+        width: 100%;
+    }
+}
