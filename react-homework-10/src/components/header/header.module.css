@@ -96,6 +96,8 @@
     padding: 7px;
 }
 
+
+
 .catalog:hover {
     background-color: #172f47;
 }
@@ -205,6 +207,37 @@
     }
 }
 
+
+@media (max-width: 1550px) {
+    .cartItem {
+        font-family: Cambria;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        background: red;
+        height: 20px;
+        width: 20px;
+        border-radius: 60%;
+        position: absolute;
+        margin-left: 33px;
+        top: 58px;
+    }
+
+    .likeItem {
+        font-family: Cambria;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        background: red;
+        height: 20px;
+        width: 20px;
+        border-radius: 60%;
+        position: absolute;
+        margin-left: 33px;
+        top: 55px;
+    }
+}
+
 @media (max-width: 1120px) {
     .leftContent {
         display: none;
@@ -216,6 +249,53 @@
 
     .header {
         height: 70px;
+    }
+
+    .cartItem {
+        font-family: Cambria;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        background: red;
+        height: 20px;
+        width: 20px;
+        border-radius: 60%;
+        position: absolute;
+        margin-left: 33px;
+        top: 35px;
+    }
+
+    .likeItem {
+        font-family: Cambria;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        background: red;
+        height: 20px;
+        width: 20px;
+        border-radius: 60%;
+        position: absolute;
+        margin-left: 33px;
+        top: 33px;
+    }
+
+    .likeImg{
+        margin-top: 10px;
+    }
+    .cartImg{
+        margin-top: 10px;
+    }
+    .scaleImg{
+        margin-top: 10px;
+    }
+    .premiumProposition{
+        margin-top: 10px;
+    }
+    .logoImg{
+        margin-top: 10px;
+    }
+    .inputGroup{
+        margin-top: 10px;
     }
 }
 
@@ -229,12 +309,124 @@
     .imgHappyHolidays {
         display: none;
     }
+    .cartItem {
+        font-family: Cambria;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        background: red;
+        height: 20px;
+        width: 20px;
+        border-radius: 60%;
+        position: absolute;
+        margin-left: 33px;
+        top: 1px;
+    }
+
+    .likeItem {
+        font-family: Cambria;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        background: red;
+        height: 20px;
+        width: 20px;
+        border-radius: 60%;
+        position: absolute;
+        margin-left: 33px;
+        top: 0;
+    }
 
 }
 
 @media (max-width: 625px) {
     .premiumProposition {
         display: none;
+    }
+}
+
+@media (min-width: 10px) {
+    .modalWindowCart {
+        display: none;
+        position: absolute;
+        height: 200px;
+        width: 350px;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+        z-index: 1000;
+        background: white;
+        margin-top: 58px;
+        left: 70%;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 500px) {
+    .modalWindowCart {
+        display: none;
+        position: absolute;
+        height: 200px;
+        width: 300px;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+        z-index: 1000;
+        background: white;
+        margin-top: 66px;
+        left: 30%;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 750px) {
+    .modalWindowCart {
+        display: none;
+        position: absolute;
+        height: 200px;
+        width: 350px;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+        z-index: 1000;
+        background: white;
+        margin-top: 68px;
+        left: 65%;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modalWindowCart {
+        display: none;
+        position: absolute;
+        height: 200px;
+        width: 350px;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+        z-index: 1000;
+        background: white;
+        margin-top: 66px;
+        left: 65%;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1500px) {
+    .modalWindowCart {
+        display: none;
+        position: absolute;
+        height: 200px;
+        width: 350px;
+        border: 2px solid whitesmoke;
+        border-radius: 10px;
+        z-index: 1000;
+        background: white;
+        margin-top: 60px;
+        left: 75%;
+        margin-bottom: 8px;
+        text-align: center;
     }
 }
 

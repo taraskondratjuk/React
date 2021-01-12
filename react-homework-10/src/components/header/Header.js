@@ -139,13 +139,16 @@ export default function Header() {
                     </div>
 
 
-                    <div className="input-group">
+                    <div className="input-group inputGroup">
                         <input type="text" className="form-control" placeholder="Я шукаю..." aria-label=""
                                aria-describedby="basic-addon1" size="30px"/>
                         <div className="input-group-append">
                             <button className="btn btn-success" type="button">Знайти</button>
                         </div>
                     </div>
+
+
+
 
 
                     <div className={style.premiumProposition}>

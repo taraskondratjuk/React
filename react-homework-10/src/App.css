@@ -19,3 +19,8 @@
     display: flex;
 }
 
+@media (max-width: 1120px) {
+    .input-group {
+        margin-top: 10px;
+    }
+}
