@@ -180,17 +180,17 @@
     text-align: center;
 }
 
-.modalWindowCartContent{
+.modalWindowCartContent {
     margin-bottom: 8px;
     margin-left: 20px;
     text-align: left;
 }
 
-.marTop{
+.marTop {
     margin-top: 10px;
 }
 
-.buttonModalWindowCartContent{
+.buttonModalWindowCartContent {
     text-align: center;
     color: #fff;
     background-color: #00a046;
@@ -198,3 +198,36 @@
     line-height: 32px;
     font-size: 14px;
 }
+
+@media (max-width: 1800px) {
+    .catalog {
+        display: none;
+    }
+}
+
+@media (max-width: 1120px) {
+    .leftContent {
+        display: none;
+    }
+
+    .rightContent {
+        display: none;
+    }
+}
+
+@media (max-width: 870px) {
+    .logoImg {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .imgHappyHolidays {
+        display: none;
+    }
+
+    .header {
+        height: 80px;
+    }
+}
+
