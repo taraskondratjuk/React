@@ -45,9 +45,9 @@ export default function Carousel() {
 
     return (
         <div className={style.carousel}>
-            <img onClick={changeLeftImg} className={style.sparrowLeft} src={left} alt="left"/>
-            <img className={style.img} src={img[count]} alt=""/>
-            <img onClick={changeRightImg} className={style.sparrowRight} src={right} alt="right"/>
+                <img onClick={changeLeftImg} className={style.sparrowLeft} src={left} alt="left"/>
+                <img className={style.img} src={img[count]} alt=""/>
+                <img onClick={changeRightImg} className={style.sparrowRight} src={right} alt="right"/>
         </div>
     )
 }

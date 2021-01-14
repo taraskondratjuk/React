@@ -1,9 +1,9 @@
-.img{
+.img {
     width: 1100px;
     height: 400px;
 }
 
-.carousel{
+.carousel {
     margin-top: 40px;
     margin-left: 40px;
     display: block;
@@ -11,7 +11,7 @@
 }
 
 
-.sparrowLeft{
+.sparrowLeft {
     width: 60px;
     display: block;
     position: absolute;
@@ -19,7 +19,7 @@
     right: 1050px;
 }
 
-.sparrowRight{
+.sparrowRight {
     width: 60px;
     display: block;
     position: absolute;
@@ -28,7 +28,7 @@
 }
 
 
-.sparrowLeft:hover{
+.sparrowLeft:hover {
     width: 70px;
     display: block;
     position: absolute;
@@ -36,13 +36,22 @@
     right: 1040px;
 }
 
-.sparrowRight:hover{
+.sparrowRight:hover {
     width: 70px;
     display: block;
     position: absolute;
     top: 180px;
     left: 1040px;
 }
+
+
+@media (max-width: 1800px) {
+    .carousel {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 @media (max-width: 1170px) {
     .carousel {

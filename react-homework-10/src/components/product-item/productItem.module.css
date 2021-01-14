@@ -62,3 +62,9 @@
 
 }
 
+@media (max-width: 1600px) {
+    .productItem {
+        border: 1px solid #dcdcdc;
+        margin: auto;
+    }
+}
