@@ -430,3 +430,19 @@
     }
 }
 
+.closeModalWindow{
+position: absolute;
+    background-color: #28a745;
+    border-color: #28a745;
+    margin-left: 147px;
+    border-radius: 35%;
+
+}
+
+.closeModalWindow:hover{
+    position: absolute;
+    background: #f84147;
+    border-color: #f84147;
+    margin-left: 147px;
+    border-radius: 35%;
+}

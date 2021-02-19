@@ -130,6 +130,7 @@ export default function Header() {
 
                     <div className={style.modalWindowCart} style={{display: visibleModalWindow}}>
                         <div>
+                            <button className={style.closeModalWindow} onClick={onVisibleModalWindow}>X</button>
                             <p className={style.modalWindowCartContent}>У кошику {cartItem.length} товари</p>
                             <p className={style.modalWindowCartContent}>На суму {allCostCartItem} грн </p>
                             <button type="button" className="btn btn-success">Оформити замовлення</button>

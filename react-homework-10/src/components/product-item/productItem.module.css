@@ -8,9 +8,9 @@
 }
 
 .img {
-    margin: 25px;
-    width: 100px;
-    height: 130px;
+    margin: 15px;
+    /*!*width: 100px;*!*/
+    /*!*height: 130px;*!*/
 }
 
 .fontSize18 {
@@ -42,7 +42,8 @@
     height: 35px;
     width: 40px;
     cursor: pointer;
-    margin-left: 90px;
+    margin-left: 80px;
+
 }
 
 .scaleImg{
@@ -51,6 +52,7 @@
     width: 40px;
     cursor: pointer;
     margin-top: 75px;
+    margin-left: 80px;
 }
 
 .likeImg{
@@ -59,6 +61,7 @@
     width: 40px;
     cursor: pointer;
     margin-top: 15px;
+    margin-left: 80px;
 
 }
 

@@ -38,22 +38,22 @@ export default function ProductItem(props) {
 
     return (
         <div className={style.productItem}>
+            <img onClick={addToLikeList} className={style.likeImg} src={likeImg} alt="likeProduct"/>
+            <img className={style.scaleImg} src={scale} alt="scale"/>
             <div>
                 <img className={style.img} src={url} alt={title}/>
-                <img onClick={addToLikeList} className={style.likeImg} src={likeImg} alt="likeProduct"/>
-                <img className={style.scaleImg} src={scale} alt="scale"/>
             </div>
+
 
             <div className={style.title}>
                 <p>{title}</p>
             </div>
-
+            <img onClick={addToCartList} className={style.cartImg} src={cartImg} alt="cart"/>
             <div className={style.price}>
                 <span>{price}</span>
                 <span className={style.fontSize18}> ₴ </span>
-                <img onClick={addToCartList} className={style.cartImg} src={cartImg} alt="cart"/>
-
             </div>
+
 
             <p className={style.isTrue}>Є в наявності</p>
         </div>
