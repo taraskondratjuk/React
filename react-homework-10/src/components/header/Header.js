@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import style from "./header.module.css"
 import headerImgHappyHolidays from "../../images/header-img/header-img-happy-holidays.jpg"
 import classNames from 'classnames';
@@ -9,9 +9,8 @@ import likeForItem from "../../images/header-img/likeForItem.png";
 import cart from "../../images/header-img/cart.png";
 import cartForItem from "../../images/header-img/cartForItem.png";
 import {useDispatch, useSelector} from "react-redux";
-import {useState} from "react";
-import {useEffect} from "react";
-import {CLEAR_TO_CART_STATE} from "../../Redux/action-types/cart-types";
+import {ADD_TO_CART_STATE, CLEAR_TO_CART_STATE} from "../../Redux/action-types/cart-types";
+import {CLEAR_TO_LIKE_STATE} from "../../Redux/action-types/like-types";
 
 
 export default function Header() {
@@ -24,34 +23,67 @@ export default function Header() {
     }));
 
     const [allCostCartItem, setAllCostCartItem] = useState(0)
-    const [countModalWindow, setCountModalWindow] = useState(1)
-    const [visibleModalWindow, setVisibleModalWindow] = useState("")
+    const [countModalCartWindow, setCountModalCartWindow] = useState(1)
+    const [visibleModalCartWindow, setVisibleModalCartWindow] = useState("")
+
+    const [allCostWishItem, setAllCostWishItem] = useState(0)
+    const [countModalWishWindow, setCountModalWishWindow] = useState(1)
+    const [visibleModalWishWindow, setVisibleModalWishWindow] = useState("")
 
 
     useEffect(() => {
-        const costWishList = cartItem.reduce((acc, value) => {
+        const costCartList = cartItem.reduce((acc, value) => {
             acc += value.price
             return acc
         }, 0)
 
-        setAllCostCartItem(costWishList)
+        setAllCostCartItem(costCartList);
+
+        const costWishList = likeItem.reduce((acc, value) => {
+            acc += value.price
+            return acc
+        }, 0)
+
+        setAllCostWishItem(costWishList);
 
     }, [likeItem, cartItem])
 
     const likeImg = likeItem.length !== 0 ? likeForItem : like
     const cartImg = cartItem.length !== 0 ? cartForItem : cart
 
-    const onVisibleModalWindow = () => {
-        setCountModalWindow(countModalWindow + 1)
-        if (countModalWindow % 2 === 0) {
-            setVisibleModalWindow("none")
+    const onVisibleModalCartWindow = () => {
+        setCountModalCartWindow(countModalCartWindow + 1)
+        if (countModalCartWindow % 2 === 0) {
+            setVisibleModalCartWindow("none")
         } else {
-            setVisibleModalWindow("block")
+            setVisibleModalCartWindow("block")
         }
     }
 
+    const onVisibleModalWishWindow = () => {
+        setCountModalWishWindow(countModalWishWindow + 1)
+        if (countModalWishWindow % 2 === 0) {
+            setVisibleModalWishWindow("none")
+        } else {
+            setVisibleModalWishWindow("block")
+        }
+    }
+
+
     const clearCartItem = () => {
         dispatch({type: CLEAR_TO_CART_STATE})
+    }
+
+    const clearWishItem = () => {
+        dispatch({type: CLEAR_TO_LIKE_STATE})
+    }
+
+    const moveWishListToCartList = () => {
+        const moveProduct = likeItem.map(item =>{
+            dispatch({type: ADD_TO_CART_STATE, payload: item})
+        });
+        dispatch({type: CLEAR_TO_LIKE_STATE})
+
     }
 
 
@@ -114,7 +146,8 @@ export default function Header() {
 
 
                 <div className={style.bottomHeader}>
-                    <img className={style.logoImg} src="https://xl-static.rozetka.com.ua/assets/img/design/logo_n.svg" alt="logo-rozetka"/>
+                    <img className={style.logoImg} src="https://xl-static.rozetka.com.ua/assets/img/design/logo_n.svg"
+                         alt="logo-rozetka"/>
 
                     <button className={classNames(style.catalog, style.mgL5)}>
                        <span>
@@ -128,14 +161,28 @@ export default function Header() {
                         <span>Каталог товарів</span>
                     </button>
 
-                    <div className={style.modalWindowCart} style={{display: visibleModalWindow}}>
+                    <div className={style.modalWindowCart} style={{display: visibleModalCartWindow}}>
                         <div>
-                            <button className={style.closeModalWindow} onClick={onVisibleModalWindow}>X</button>
+                            <button className={style.closeModalWindow} onClick={onVisibleModalCartWindow}>X</button>
                             <p className={style.modalWindowCartContent}>У кошику {cartItem.length} товари</p>
                             <p className={style.modalWindowCartContent}>На суму {allCostCartItem} грн </p>
                             <button type="button" className="btn btn-success">Оформити замовлення</button>
                             <p className={style.marTop}><a href="#">Перейти до кошика</a></p>
                             <p className={style.marTop} onClick={clearCartItem}><a href="#">Очистити кошик</a></p>
+                        </div>
+
+                    </div>
+
+                    <div className={style.modalWindowWish} style={{display: visibleModalWishWindow}}>
+                        <div>
+                            <button className={style.closeModalWindow} onClick={onVisibleModalWishWindow}>X</button>
+                            <p className={style.modalWindowCartContent}>У списку бажань {likeItem.length} товари</p>
+                            <p className={style.modalWindowCartContent}>На суму {allCostWishItem} грн </p>
+                            <button type="button" className="btn btn-success" onClick={moveWishListToCartList}>Перенести
+                                товари до корзини
+                            </button>
+                            <p className={style.marTop} onClick={clearWishItem}><a href="#">Очистити список бажань</a>
+                            </p>
                         </div>
                     </div>
 
@@ -147,9 +194,6 @@ export default function Header() {
                             <button className="btn btn-success" type="button">Знайти</button>
                         </div>
                     </div>
-
-
-
 
 
                     <div className={style.premiumProposition}>
@@ -170,7 +214,10 @@ export default function Header() {
                         }
 
 
-                        <img className={classNames(style.likeImg, style.pointer)} src={likeImg} alt="scale"/>
+                        <img className={classNames(style.likeImg, style.pointer)} src={likeImg} alt="likeImg"
+                             onClick={onVisibleModalWishWindow}
+                        />
+
 
                     </div>
 
@@ -181,7 +228,8 @@ export default function Header() {
                         }
 
                         <img className={classNames(style.cartImg, style.pointer)} src={cartImg} alt="cartImg"
-                             onClick={onVisibleModalWindow}/>
+                             onClick={onVisibleModalCartWindow}
+                        />
 
                     </div>
 

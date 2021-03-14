@@ -1,4 +1,5 @@
-import {ADD_TO_LIKE_STATE} from "../action-types/like-types";
+import {ADD_TO_LIKE_STATE, CLEAR_TO_LIKE_STATE,} from "../action-types/like-types";
+
 
 const initState = {
     likeItem: []
@@ -14,6 +15,9 @@ export const likeReducer = (state = initState, action) => {
             }
 
             return {...state, likeItem: updateWishList}
+
+        case CLEAR_TO_LIKE_STATE:
+            return {likeItem: []}
         default:
             return {...state}
     }
